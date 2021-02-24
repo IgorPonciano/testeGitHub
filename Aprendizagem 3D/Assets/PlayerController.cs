@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float mouseSensitivity;
     [SerializeField] bool lookCursor = true;
     private CharacterController characterController;
+    private float testVariable;
+    private int anotherTest;
+    private char lastTest;
 
     float cameraPitch = 0f;
     float walkSpeed = 6.0f;
@@ -53,6 +56,8 @@ public class PlayerController : MonoBehaviour
 
         Vector3 velociy = (transform.forward * inputDir.y + transform.right * inputDir.x) * walkSpeed;
         //When a GameObject is rotated, the blue arrow representing the Z axis of the GameObject also changes direction.
+        //arroz com feijão
+        //duni duni ni te
         characterController.Move(velociy * Time.deltaTime);
     }
 }
