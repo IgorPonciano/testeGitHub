@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float mouseSensitivity;
     [SerializeField] bool lookCursor = true;
     private CharacterController characterController;
+
     private bool isGrounded;
 
     [Header("Ground Check stuff")]
@@ -16,6 +17,11 @@ public class PlayerController : MonoBehaviour
     public LayerMask whatIsGround;
 
     private float gravity = -9.8f;
+
+    private float testVariable;
+    private int anotherTest;
+    private char lastTest;
+
 
     float cameraPitch = 0f;
     float walkSpeed = 6.0f;
@@ -65,6 +71,11 @@ public class PlayerController : MonoBehaviour
 
 
         //When a GameObject is rotated, the blue arrow representing the Z axis of the GameObject also changes direction.
+
         characterController.Move(velocity * Time.deltaTime);
+
+        //arroz com feijão
+        //duni duni ni te
+        characterController.Move(velociy * Time.deltaTime);
     }
 }
