@@ -24,7 +24,9 @@ public class PlayerController : MonoBehaviour
 
 
     float cameraPitch = 0f;
+    float currentSpeed = 0f;
     float walkSpeed = 6.0f;
+    float runSpeed = 20.0f;
 
     private void Awake()
     {
@@ -63,10 +65,12 @@ public class PlayerController : MonoBehaviour
     private void UpdateMovement()
     {
         isGrounded = true;
+        currentSpeed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : walkSpeed;
+
         Vector2 inputDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         inputDir.Normalize();
 
-        Vector3 velocity = (transform.forward * inputDir.y + transform.right * inputDir.x) * walkSpeed;
+        Vector3 velocity = (transform.forward * inputDir.y + transform.right * inputDir.x) * currentSpeed;
         velocity += Vector3.up * gravity * Time.deltaTime* 100;
 
 
@@ -76,6 +80,6 @@ public class PlayerController : MonoBehaviour
 
         //arroz com feijão
         //duni duni ni te
-        characterController.Move(velociy * Time.deltaTime);
+        characterController.Move(velocity * Time.deltaTime);
     }
 }
