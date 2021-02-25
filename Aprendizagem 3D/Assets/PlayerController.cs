@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
     private float gravity = -9.8f;
 
+  
+
     private float testVariable;
     private int anotherTest;
     private char lastTest;
@@ -30,7 +32,8 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        characterController = GetComponent<CharacterController>();    
+        characterController = GetComponent<CharacterController>();   
+       
     }
 
     // Start is called before the first frame update
